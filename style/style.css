@@ -121,3 +121,32 @@ a{
 .middle-content .right img{
     width: 660px;
 }
+.categories{
+    margin: 30px 70px;
+}
+.categories h1{
+    padding-left: 15px;
+    border-left: 5px solid rgb(255, 0, 123);
+    margin-bottom: 30px;
+}
+.categories h1 span{
+    color: rgb(255, 0, 123);
+}
+.cat-item{
+    margin: 0px 200px;
+    display: flex;
+    justify-content: space-between;
+}
+.cat-item .items{
+    padding: 20px;
+}
+.cat-item img{
+    width: 150px;
+    height: 200px;
+    border-radius: 15px;
+}
+.cat-item .items h3{
+    margin-top: -200px;
+    margin-left: 30px;
+    color: #fff;
+}
