@@ -60,7 +60,7 @@ body{
 .header2{
     display: flex;
     align-items: center;
-    padding: 20px 30px;
+    padding: 20px 70px;
 }
 .header2 .drop-down-list{
     margin-right: 8px;
@@ -78,4 +78,46 @@ a{
 .nav-bar li{
     padding: 0 25px;
     list-style: none;
+}
+.middle-content{
+    background: url("/images/background.jpg");
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 70px;
+}
+.middle-content .left h3{
+    color: #545454;
+    margin:0px 0px 27px 0px;
+}
+.middle-content .left .title{
+    line-height: 3rem;
+    padding-bottom: 20px;
+}
+.middle-content .left h1 span{
+    color: rgb(255, 0, 123);
+}
+.middle-content .left p{
+    color: #545454;
+    padding-bottom: 20px;
+}
+.middle-content .left button{
+    background: rgb(255, 0, 123);
+    padding: 15px 38px;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.price-bar{
+    display: flex;
+    padding: 20px 0px;
+}
+.price-bar .item{
+    padding:0px 15px;
+}
+.price-bar .item p{
+    font-size: 13px;
+}
+.middle-content .right img{
+    width: 660px;
 }
