@@ -14,6 +14,7 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 23px 70px;
+    background: #fff;
 }
 .right-bar{
     display: flex;
@@ -100,7 +101,7 @@ a{
     color: #545454;
     padding-bottom: 20px;
 }
-.middle-content .left button{
+button{
     background: rgb(255, 0, 123);
     padding: 15px 38px;
     border: none;
@@ -123,6 +124,7 @@ a{
 }
 .categories{
     margin: 30px 70px;
+    margin-bottom: 230px;
 }
 .categories h1{
     padding-left: 15px;
@@ -149,4 +151,81 @@ a{
     margin-top: -200px;
     margin-left: 30px;
     color: #fff;
+}
+.promotion-banner{
+    padding: 30px 70px;
+    background: url("/images/blueback.jpg");
+    background-size:cover ;
+    display: flex;
+    justify-content: space-between;
+}
+.promotion-banner h4{
+    color: rgb(255, 0, 123);
+    margin-bottom: 30px;
+}
+.promotion-banner h1{
+    margin-bottom: 30px;
+}
+.time{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+.time .round{
+    width: 70px; 
+    height: 70px; 
+    padding: 15px 10px;
+    margin-left: 20px;
+    background: #fff;
+    border-radius: 50%;
+    text-align: center; 
+    box-sizing: border-box; 
+}
+.time .round:first-child{
+    margin-left: -20px;
+}
+.promotion-banner .right{
+    margin-left: 300px;
+    width: 700px;
+    height: 400px;
+}
+.explore{
+    padding: 30px 70px;
+}
+.explore h1{
+    padding-left: 15px;
+    border-left: 5px solid rgb(255, 0, 123);
+    margin-bottom: 30px;
+}
+.explore h1 span{
+    color: rgb(255, 0, 123);
+}
+.item-set{
+    display: flex;
+
+}
+.item-set .arrivels img{
+    width: 180px;
+    height: 200px;
+}
+#add-cart-btn{
+    margin-left: 30px;
+    padding: 7px 15px;
+    border: 2px solid rgb(255, 0, 123);
+    color: rgb(255, 0, 123);
+    background: #fff;
+    cursor: pointer;
+}
+.item-set {
+    justify-content: space-between;
+    margin: 20px 150px;
+}
+.item-set .arrivels{
+    margin-bottom: 15px;
+}
+.item-set .arrivels h6{
+    color: rgb(255, 0, 123);
+}
+.item-set .arrivels #price-list{
+    margin-bottom: 10px;
 }
