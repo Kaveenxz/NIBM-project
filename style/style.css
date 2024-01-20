@@ -229,3 +229,29 @@ button{
 .item-set .arrivels #price-list{
     margin-bottom: 10px;
 }
+.trending{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 140px;
+}
+.trending .trend{
+    display: flex;
+    justify-content: space-between;
+    background: #89daff;
+    padding: 60px 0px;
+}
+.trending .trend:first-child{
+    background: url("/images/background.jpg");
+}
+.trending .trend img{
+    width: 150px;
+    height: 180px;
+}
+.trending .trend .left{
+    border: 1px solid;
+}
+.trending .trend .right{
+    margin-left: 200px;
+    padding-right: 30px;
+    border: 1px solid;
+}
