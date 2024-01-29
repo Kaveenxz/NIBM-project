@@ -238,7 +238,8 @@ button{
     display: flex;
     justify-content: space-between;
     background: #89daff;
-    padding: 60px 0px;
+    padding: 15px 15px;
+    margin-right: 5px;
 }
 .trending .trend:first-child{
     background: url("/images/background.jpg");
@@ -247,11 +248,10 @@ button{
     width: 150px;
     height: 180px;
 }
-.trending .trend .left{
-    border: 1px solid;
+.trending .trend h6{
+    color: rgb(255, 0, 123);
+    margin-bottom: 10px;
 }
-.trending .trend .right{
-    margin-left: 200px;
-    padding-right: 30px;
-    border: 1px solid;
+.trending .trend h1{
+    line-height: 35px;
 }
