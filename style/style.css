@@ -255,3 +255,22 @@ button{
 .trending .trend h1{
     line-height: 35px;
 }
+.benifits {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 140px;
+}
+.benifits .ben{
+    text-align: center;
+}
+.benifits .ben img{
+    background: rgb(255, 0, 123);
+    padding: 10px;
+    border-radius: 50px;
+}
+.benifits .ben h3{
+    font-weight: 550;
+}
+.benifits .ben p{
+    font-size: 12px;
+}
