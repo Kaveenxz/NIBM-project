@@ -340,3 +340,52 @@ button{
     color: #fff;
     text-align: center;
 }
+.about-us{
+    padding: 30px 70px;
+}
+.about-us span{
+    color: rgb(255, 0, 123);
+}
+.about-us .head{
+    padding-bottom: 40px;
+}
+.about-us .head h1{
+    padding-bottom: 10px;
+}
+.about-us .story{
+    padding-bottom: 40px;
+}
+.about-us .story h2{
+    padding-left:10px ;
+    border-left:4px solid rgb(255, 0, 123);
+    margin-bottom: 15px;
+}
+.about-us .apart{
+    padding-bottom: 40px;
+}
+.about-us .apart h2{
+    padding-left:10px ;
+    border-left:4px solid rgb(255, 0, 123);
+    margin-bottom: 15px;
+}
+.about-us .apart li{
+    padding-bottom: 10px;
+    list-style: none;
+}
+.about-us .promis{
+    margin-bottom: 40px;
+}
+.about-us .promis h2{
+    padding-left:10px ;
+    border-left:4px solid rgb(255, 0, 123);
+    margin-bottom: 15px;
+}
+.about-us .promis p{
+    margin-bottom: 10px;
+}
+.about-us .promis .regards p{
+    font-weight: 600;
+}
+.about-us .promis .regards span{
+    color: rgb(255, 0, 123);
+}
