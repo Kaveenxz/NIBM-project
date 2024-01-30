@@ -274,3 +274,69 @@ button{
 .benifits .ben p{
     font-size: 12px;
 }
+.footer{
+    background: #0f0f0f;
+    padding: 30px 40px;
+}
+.footer .top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.footer .top .content{
+    color:#e2e2e2;
+}
+.footer .top .one h2{
+    color: rgb(255, 0, 123);
+    padding-bottom: 18px;
+}
+.footer .top .one span{
+    color: #fff;
+}
+.footer .top .one p{
+    padding-bottom: 15px;
+}
+.footer .top .one input{
+    background: transparent;
+    padding: 10px 20px;
+    border: 2px solid #fff;
+    color: #fff;
+}
+.footer .top .one input::placeholder{
+    color: #fff;
+    font-size: 15px;
+}
+.footer .top .two h3,
+.footer .top .three h3,
+.footer .top .four h3,
+.footer .top .five h3{
+    padding-bottom: 18px;
+}
+.footer .top .two p{
+    padding-bottom: 13px;
+}
+.footer .top .three p,
+.footer .top .four p{
+    padding-bottom: 13px;
+}
+.footer .top .three a,
+.footer .top .four a{
+    color: #fff;
+}
+.footer .top .five p{
+    padding-bottom: 15px;
+}
+.footer .top .five a{
+    color: #fff;
+    padding: 10px 20px;
+}
+.footer .top .five img{
+    width: 40px;
+    margin-top: 10px;
+    margin-left: -15px;
+}
+.footer .bottom{
+    margin-top: 20px;
+    color: #fff;
+    text-align: center;
+}
