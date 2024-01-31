@@ -16,6 +16,12 @@ body{
     padding: 23px 70px;
     background: #fff;
 }
+.drop-down-list select{
+    border: 3px solid #7e7e7e;
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #7e7e7e;
+}
 .right-bar{
     display: flex;
 }
