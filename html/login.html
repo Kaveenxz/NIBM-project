@@ -7,10 +7,25 @@
     <link rel="stylesheet" href="/style/style.css">
     <title>SHOPSY</title>
     <link rel="icon" type="image/x-icon" href="/images/shopping-bag.png">
+
 </head>
 
 <body>
+    <form>
+        <h2>Login</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
 
+        <label for="password">Password:</label>
+        <div class="password-container">
+            <input type="password" id="password" name="password" required>
+            <span class="password-toggle" onclick="togglePasswordVisibility()">👁️</span>
+        </div>
+
+        <button type="submit">Sign In</button>
+
+        <a href="#" class="signup-link">Don't have an account? Sign Up</a>
+    </form>
 
 </body>
 </html>
