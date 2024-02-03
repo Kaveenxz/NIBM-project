@@ -1,0 +1,5 @@
+.selected-items{
+    padding-left:10px ;
+    border-left:4px solid rgb(255, 0, 123);
+    margin: 15px 5px;
+}
