@@ -7,11 +7,11 @@ body{
     background: url("/images/blueback.jpg");
     background-size:cover ;
 }
-img{
+/* img{
     margin-left: 25px;
     width: 200px;
     height: 100px;
-}
+} */
 .brand-list {
     display: flex;
     justify-content: space-between;
