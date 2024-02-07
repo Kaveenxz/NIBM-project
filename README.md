@@ -8,7 +8,6 @@ This is a basic e-commerce website built using HTML, CSS, and JavaScript. The pr
 - **Product Listing:** Display a variety of products with images, names, and prices.
 - **Product Details:** View detailed information about each product.
 - **Shopping Cart:** Add products to the shopping cart and view the cart contents.
-- **Checkout:** Proceed to checkout with selected items and enter shipping details.
 - **Responsive Design:** Ensures a seamless experience across different devices.
 
 ## Usage
