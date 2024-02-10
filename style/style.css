@@ -62,7 +62,13 @@ body{
 .right-bar .icons:first-child img{
     padding-left: 10px;
 }
-
+.load-more-button{
+    margin-left: 42%;
+    margin-bottom: 50px;
+    text-align: center;
+    padding: 15px 70px;
+    cursor: pointer;
+}
 .hr1{
     border: 1px solid rgb(215, 215, 215);
     margin: 0px 15px;
