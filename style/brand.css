@@ -3,10 +3,7 @@
     border-left:4px solid rgb(255, 0, 123);
     margin: 35px 25px;
 }
-body{
-    background: url("/images/blueback.jpg");
-    background-size:cover ;
-}
+
 .brand-item img{
     margin-left: 25px;
     width: 200px;
