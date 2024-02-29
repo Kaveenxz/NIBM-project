@@ -1,0 +1,162 @@
+<?php
+$servername = 'localhost';
+$database = 'shopsy';
+$username = 'root';
+$password = '';
+
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT * FROM cart_items";
+$result = mysqli_query($conn, $sql);
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/cart.css">
+    <title>CART</title>
+    <link rel="icon" type="image/x-icon" href="../images/shopping-bag.png">
+</head>
+
+<body>
+<header class="header">
+        <a href="../index.html"><h1>SHOPSY<span>.CO</span></h1></a>
+        <input type="search" placeholder=" Search anything here">
+
+        <div class="right-bar">
+            <div class="icons">
+                <a href="wishlist.html">
+                    <img src="../images/heart (1).png" alt="">
+                    <h6>WishList</h6>
+                </a>
+            </div>
+
+            <div class="icons">
+                <a href="cart.html">
+                    <img src="../images/shopping-cart.png" alt="">
+                    <h6>Cart</h6>
+                </a>
+            </div>
+
+            <div class="icons">
+                <a href="login.html">
+                    <img src="../images/enter.png" alt="">
+                    <h6>Login</h6>
+                </a>
+            </div>
+        </div>
+
+    </header>
+    <hr class="hr1">
+
+    <header class="header2">
+        <div class="drop-down-list">
+            <select id="categoryDropdown" name="category">
+                <option>Browse Categories:</option>
+                <option value="electronic_accessories">Electronic Accessories</option>
+                <option value="electronic_devices">Electronic Devices</option>
+                <option value="tv_home_appliances">TV & Home Appliances</option>
+                <option value="health_beauty">Health & Beauty</option>
+                <option value="babies_toys">Babies & Toys</option>
+                <option value="groceries_pets">Groceries & Pets</option>
+                <option value="home_lifestyle">Home & Lifestyle</option>
+                <option value="womens_fashion">Women's Fashion</option>
+                <option value="mens_fashion">Men's Fashion</option>
+                <option value="watches_accessories">Watches & Accessories</option>
+                <option value="sports_outdoor">Sports & Outdoor</option>
+                <option value="automotive_motorbike">Automotive & Motorbike</option>
+            </select>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="new-arrivals.html">Buy Products</a></li>
+                <li><a href="on-sale.html">On sale</a></li>
+                <li><a href="best-seller.html">Best Seller</a></li>
+                <li><a href="brands.html">Brands</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="selected-items">
+        <h2>Your selected items</h2>
+    </div>
+
+    <?php
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+
+            echo "<div class='arrivels'>";
+            echo "<p>Item Name: " . $row["item_name"] . "</p>";
+            echo "<p>Price: Rs. " . $row["price"] . "</p>";
+            echo "<img src='../images/" . $row["image_url"] . "' alt='Item Image'>";
+            echo "<p>Category: " . $row["category"] . "</p>";
+            echo "</div>";
+        }
+    } else {
+        echo "<p>No items in the cart</p>";
+    }
+
+    mysqli_close($conn);
+    ?>
+
+    <div class="footer">
+        <div class="top">
+            <div class="content one">
+                <h2>SHOPSY<span>.CO</span></h2>
+                <p>Subscribe</p>
+                <p>Get 10% off your first order</p>
+                <input type="email" placeholder="Enter your email ->">
+            </div>
+            <div class="content two">
+                <h3>Get in touch</h3>
+                <p>11 Wijerama Mawatha, <br>Boralla, Sri Lanka</p>
+                <p>kaveenhansithx@gmail.com</p>
+                <p>+94-78-357-23-88</p>
+            </div>
+            <div class="content three">
+                <h3>Account</h3>
+                <p><a href="">My Account</a></p>
+                <p><a href="login.html">Login / Register</a></p>
+                <p><a href="cart.html">Cart</a></p>
+                <p><a href="wishlist.html">Wishlist</a></p>
+            </div>
+            <div class="content four">
+                <h3>Quick Link</h3>
+                <p><a href="new-arrivals.html">New Arrival</a></p>
+                <p><a href="best-seller.html">Best Seller</a></p>
+                <p><a href="on-sale.html">On sale</a></p>
+                <p><a href="brands.html">Brands</a></p>
+            </div>
+            <div class="content five">
+                <h3>Download App</h3>
+                <p>Save $3 with App new User Only</p>
+                <p><a href="">Play Store -></a></p>
+                <p><a href="">App Store -></a></p>
+                <div class="social">
+                    <a href="https://www.facebook.com/"><img src="images/fbicon.png" alt=""></a>
+                    <a href="https://www.instagram.com/"><img src="images/instericon.png" alt=""></a>
+                    <a href="https://www.linkedin.com/"><img src="images/linkicon.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="bottom">
+            &copy; Copyright Shopsy.co 2024. All right reserved
+        </div>
+    </div>
+
+
+</body>
+
+</html>
