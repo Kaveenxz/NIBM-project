@@ -19,3 +19,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+function addToCart(itemName, price, imageUrl, category) {
+    var url = './php/config.php';
+
+    var data = new URLSearchParams();
+    data.append('item_name', itemName);
+    data.append('price', price);
+    data.append('image_url', imageUrl);
+    data.append('category', category);
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: data
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(responseText => {
+        console.log(responseText);
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error.message);
+    });
+}
+
