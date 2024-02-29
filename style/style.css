@@ -97,7 +97,7 @@ a{
     list-style: none;
 }
 .middle-content{
-    background: url("/images/background.jpg");
+    background-color: #ffbef6;
     display: flex;
     justify-content: space-between;
     padding: 30px 70px;
@@ -170,7 +170,7 @@ button{
 }
 .promotion-banner{
     padding: 30px 70px;
-    background: url("/images/blueback.jpg");
+    background: url("../images/blueback.jpg");
     background-size:cover ;
     display: flex;
     justify-content: space-between;
@@ -258,7 +258,7 @@ button{
     margin-right: 5px;
 }
 .trending .trend:first-child{
-    background: url("/images/background.jpg");
+    background: url("../images/background.jpg");
 }
 .trending .trend img{
     width: 150px;
