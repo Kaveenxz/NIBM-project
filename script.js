@@ -20,8 +20,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// navbar elemenet changer
+
+var currentPageUrl = window.location.href;
+
+var navLinks = document.querySelectorAll('.nav-bar a');
+
+navLinks.forEach(function(link) {
+    if (link.href === currentPageUrl) {
+        link.parentNode.classList.add('active');
+    }
+});
+
+
 function addToCart(itemName, price, imageUrl, category) {
-    var url = './php/config.php';
+    var url = './php/addToCart.php';
 
     var data = new URLSearchParams();
     data.append('item_name', itemName);
@@ -44,10 +57,9 @@ function addToCart(itemName, price, imageUrl, category) {
     })
     .then(responseText => {
         console.log(responseText);
+        alert("Item added to cart Successfully!");
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error.message);
     });
-
-   alert("Item added to cart Sucsessfully!")
 }

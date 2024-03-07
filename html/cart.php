@@ -1,14 +1,5 @@
 <?php
-$servername = 'localhost';
-$database = 'shopsy';
-$username = 'root';
-$password = '';
-
-$conn = mysqli_connect($servername, $username, $password, $database);
-
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+include('../php/config.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_item"])) {
     $itemId = $_POST["delete_item"];

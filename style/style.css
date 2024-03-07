@@ -96,6 +96,10 @@ a{
     padding: 0 25px;
     list-style: none;
 }
+.nav-bar li.active a {
+    color: rgb(255, 0, 123); 
+    border-bottom: 3px solid rgb(255, 0, 123); 
+}
 .middle-content{
     background-color: #ffbef6;
     display: flex;
