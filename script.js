@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
 function addToCart(itemName, price, imageUrl, category) {
     var url = './php/config.php';
 
@@ -47,5 +48,6 @@ function addToCart(itemName, price, imageUrl, category) {
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error.message);
     });
-}
 
+   alert("Item added to cart Sucsessfully!")
+}

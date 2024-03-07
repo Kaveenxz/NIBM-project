@@ -10,6 +10,12 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_item"])) {
+    $itemId = $_POST["delete_item"];
+    $deleteSql = "DELETE FROM cart_items WHERE id = $itemId";
+    mysqli_query($conn, $deleteSql);
+}
+
 $sql = "SELECT * FROM cart_items";
 $result = mysqli_query($conn, $sql);
 
@@ -19,16 +25,35 @@ $result = mysqli_query($conn, $sql);
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/cart.css">
     <title>CART</title>
     <link rel="icon" type="image/x-icon" href="../images/shopping-bag.png">
+
+    <style>
+        .item-set {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .arrivels {
+            width: 23%;
+            margin: 1%;
+            text-align: center;
+        }
+        .no-cart {
+            margin: 20px;
+            text-align: center;
+            color: rgb(255, 0, 123);
+            font-size: 20px;
+        }
+    </style>
 </head>
 
 <body>
-<header class="header">
+    <header class="header">
         <a href="../index.html"><h1>SHOPSY<span>.CO</span></h1></a>
         <input type="search" placeholder=" Search anything here">
 
@@ -41,7 +66,7 @@ $result = mysqli_query($conn, $sql);
             </div>
 
             <div class="icons">
-                <a href="cart.html">
+                <a href="cart.php">
                     <img src="../images/shopping-cart.png" alt="">
                     <h6>Cart</h6>
                 </a>
@@ -54,7 +79,6 @@ $result = mysqli_query($conn, $sql);
                 </a>
             </div>
         </div>
-
     </header>
     <hr class="hr1">
 
@@ -94,17 +118,26 @@ $result = mysqli_query($conn, $sql);
 
     <?php
     if (mysqli_num_rows($result) > 0) {
+        echo '<div class="item-set">';
         while ($row = mysqli_fetch_assoc($result)) {
-
-            echo "<div class='arrivels'>";
-            echo "<p>Item Name: " . $row["item_name"] . "</p>";
-            echo "<p>Price: Rs. " . $row["price"] . "</p>";
-            echo "<img src='../images/" . $row["image_url"] . "' alt='Item Image'>";
-            echo "<p>Category: " . $row["category"] . "</p>";
-            echo "</div>";
+            echo '<div class="arrivels">';
+            echo '<img src="../images/' . $row["image_url"] . '" alt="Item Image">';
+            echo '<h6 id="titl-cart">' . $row["category"] . '</h6>';
+            echo '<h5 id="item-name">' . $row["item_name"] . '</h5>';
+            echo '<h5 id="price-list">Rs. ' . $row["price"] . '</h5>';
+            echo '<form method="post">';
+            echo '<input type="hidden" name="delete_item" value="' . $row["id"] . '">';
+            echo '<button type="submit" id="delete-cart-btn">Delete</button>';
+            echo '</form>';
+            echo '</div>';
         }
+        echo '</div>';
     } else {
-        echo "<p>No items in the cart</p>";
+        echo "<p class='no-cart'>No items in the cart</p>";
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_item"])) {
+        echo '<meta http-equiv="refresh" content="0">';
     }
 
     mysqli_close($conn);
@@ -156,6 +189,9 @@ $result = mysqli_query($conn, $sql);
         </div>
     </div>
 
+    <script>
+     
+    </script>
 
 </body>
 
