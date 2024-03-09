@@ -1,39 +1,20 @@
 <?php
-include('./config.php'); // Include your database connection here
+include('config.php');
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST["register"])) {
-        
-        $name = $_POST["name"];
-        $email = $_POST["email"];
-        $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+if (isset($_POST['register'])) {
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-        $insertSql = "INSERT INTO user_info (name, email, password) VALUES ('$name', '$email', '$password')";
-        mysqli_query($conn, $insertSql);
+    $query = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$password')";
+    $result = mysqli_query($conn, $query);
 
-        header("Location: ../html/UserDashboard.html");
-        exit();
-    } elseif (isset($_POST["login"])) {
-        
-        $email = $_POST["email"];
-        $password = $_POST["password"];
-
-        $selectSql = "SELECT * FROM user_info WHERE email='$email'";
-        $result = mysqli_query($conn, $selectSql);
-
-        if ($result && $row = mysqli_fetch_assoc($result)) {
-            if (password_verify($password, $row["password"])) {
-                header("Location: ../html/UserDashboard.html");
-                exit();
-            } else {
-                echo "Incorrect password";
-            }
-        } else {
-            echo "User not found";
-        }
+    if ($result) {
+        echo "Registration successful!";
+    } else {
+        echo "Error: " . mysqli_error($conn);
     }
 }
 
-// Additional code if needed
 mysqli_close($conn);
 ?>
