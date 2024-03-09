@@ -11,7 +11,7 @@ if (isset($_POST['add_item'])) {
     $result = mysqli_query($conn, $query);
 
     if ($result) {
-        header("Location: UserDashboard.php");
+        header("Location: ../html/UserDashboard.php");
         exit();
     } else {
         echo "Error: " . mysqli_error($conn);
@@ -28,7 +28,7 @@ if (isset($_POST['update_item'])) {
     $result = mysqli_query($conn, $query);
 
     if ($result) {
-        header("Location: UserDashboard.php");
+        header("Location: ../html/UserDashboard.php");
         exit();
     } else {
         echo "Error: " . mysqli_error($conn);
@@ -42,7 +42,7 @@ if (isset($_POST['delete_item'])) {
     $result = mysqli_query($conn, $query);
 
     if ($result) {
-        header("Location: UserDashboard.php");
+        header("Location: ../html/UserDashboard.php");
         exit();
     } else {
         echo "Error: " . mysqli_error($conn);

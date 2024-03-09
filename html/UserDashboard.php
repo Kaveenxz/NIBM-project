@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -78,6 +79,7 @@
 
         while ($row = mysqli_fetch_assoc($result)) {
             echo '<div class="item">';
+            echo "Item ID: " . $row['item_id'] . "<br>";
             echo "Item Name: " . $row['item_name'] . "<br>";
             echo "Category: " . $row['category'] . "<br>";
             echo "Price: $" . $row['price'] . "<br>";
@@ -86,9 +88,8 @@
         ?>
     </div>
 
-    <!-- Add form to add new item -->
     <div class="form-container">
-        <form method="post" action="process_item.php">
+        <form method="post" action="../php/dashboardCrud.php">
             <label for="item_name">Item Name:</label>
             <input type="text" name="item_name" required>
 
@@ -101,8 +102,7 @@
             <button type="submit" name="add_item">Add Item</button>
         </form>
 
-        <!-- Add form to update item -->
-        <form method="post" action="process_item.php">
+        <form method="post" action="../php/dashboardCrud.php">
             <label for="item_id_update">Item ID to Update:</label>
             <input type="number" name="item_id_update" required>
 
@@ -118,8 +118,7 @@
             <button type="submit" name="update_item">Update Item</button>
         </form>
 
-        <!-- Add form to delete item -->
-        <form method="post" action="process_item.php">
+        <form method="post" action="../php/dashboardCrud.php">
             <label for="item_id_delete">Item ID to Delete:</label>
             <input type="number" name="item_id_delete" required>
 
